@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% block title %}VRS-Gallery{% endblock title %}
+{% block style %}
+
+-moz-transition: all .3s ease-in-out;
+-o-transition: all .3s ease-in-out;
+-ms-transition: all .3s ease-in-out;
+}
+
+
+.transition {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+}
+.modal-header {
+    border-bottom: none;
+}
+.modal-title {body {
+  background-color:#1d1d1d !important;
+  font-family: "Asap", sans-serif;
+  color:#989898;
+  margin:10px;
+  font-size:16px;
+}
+
+#demo {
+  height:100%;
+  position:relative;
+  overflow:hidden;
+}
+
+
+.green{
+  background-color:#6fb936;
+}
+.thumb{
+    margin-bottom: 30px;
+}
+
+.page-top{
+    margin-top:85px;
+}
+
+
+img.zoom {
+    width: 100%;
+    height: 200px;
+    border-radius:5px;
+    object-fit:cover;
+    -webkit-transition: all .3s ease-in-out;
+        color:#000;
+}
+.modal-footer{
+    display:none;
+}
+
+{% endblock style %}
+{% block body %}
+<div class="container page-top" style="margin-top:20px;">
+    <div class="row">
+        {% for img in Gallery %}
+        <div class="col-lg-3 col-md-4 col-xs-6 thumb" data-aos="zoom-in">
+            <a href="{{img.image.url}}"
+               class="fancybox" rel="ligthbox">
+                <img src="{{img.image.url}}"
+                     class="zoom img-fluid " alt="">
+            </a>
+        </div>
+         {% endfor %}
+    </div>
+</div>
+<script>
+  $(document).ready(function(){
+  $(".fancybox").fancybox({
+        openEffect: "none",
+        closeEffect: "none"
+    });
+
+    $(".zoom").hover(function(){
+
+		$(this).addClass('transition');
+	}, function(){
+
+		$(this).removeClass('transition');
+	});
+});
+</script>
+{% endblock body %}

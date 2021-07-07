@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}VRS-Services{% endblock title %}
+{% block body %}
+<section id="services-transportation" class="about section-bg" style="background-color:#b95d8940;">
+    <div class="container aos-init aos-animate" data-aos="fade-up">
+        <div class="section-title">
+            <h2>SERVICES</h2>
+            <h3>{% block service %}{% endblock service %}</h3>
+            <p>VRS Courier & Cargo – India’s most reliable, dedicated and expert online Transport logistics services
+                partner!</p>
+        </div>
+        <div class="row">
+
+            <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center aos-init aos-animate"
+                 data-aos="fade-up" data-aos-delay="100">
+                <p class="fst-italic">{% block info %} {% endblock info %}
+                </p>
+                <ul>
+                    <li>
+                        <i class="{% block icon %}{% endblock icon %}"></i>
+                        <div>
+                            <h5>{% block header1 %}{% endblock header1 %}</h5>
+                            <p>{% block info1 %}{% endblock info1 %}</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="{% block icon1 %}{% endblock icon1 %}"></i>
+                        <div>
+                            <h5>{% block header2 %}{% endblock header2 %}</h5>
+                            <p>{% block info2 %}{% endblock info2 %}</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-6 aos-init aos-animate" data-aos="fade-right" data-aos-delay="100">
+                <img src="{% block src %}{% static 'img/truck/Boy.jpg' %}{% endblock src %}" class="img-fluid" alt="" height="100%">
+            </div>
+        </div>
+        <p class="fst-italic">{% block extra %}{% endblock extra %}</p>
+    </div>
+</section>
+{% endblock body %}
