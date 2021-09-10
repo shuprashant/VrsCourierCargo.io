@@ -105,7 +105,7 @@ Send2Trash==1.7.1
 six==1.15.0
 soupsieve==2.2.1
 sqlite-db-tools==0.1
-sqlparse==0.4.1
+sqlparse==0.4.2
 terminado==0.10.1
 testpath==0.5.0
 tornado==6.1
